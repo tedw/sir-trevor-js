@@ -51,6 +51,16 @@
         }
       });
 
+      // SirTrevor.config.defaults.Block.upload_options.html = "<p>cool</p>"
+
+      // SirTrevor.setDefaults({
+      //   Block: {
+      //     upload_options: {
+      //       html: '<p>cool</p>'
+      //     }
+      //   }
+      // });
+
       window.editor = new SirTrevor.Editor({
         el: document.querySelector('.sir-trevor'),
         blockTypes: [
@@ -60,7 +70,8 @@
           "Quote",
           "Image",
           "Video",
-          "Tweet"
+          "Tweet",
+          "ImageWithCaption"
         ]
       });
 
