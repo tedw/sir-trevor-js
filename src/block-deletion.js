@@ -7,12 +7,13 @@ var BlockDeletion = function() {
 
 Object.assign(BlockDeletion.prototype, require('./function-bind'), require('./renderable'), {
 
-  tagName: 'a',
+  tagName: 'button',
   className: 'st-block-ui-btn__delete',
 
   attributes: {
     html: 'delete',
-    'data-icon': 'close'
+    'data-icon': 'close',
+    'type': 'button'
   }
 
 });

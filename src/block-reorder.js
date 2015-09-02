@@ -21,13 +21,14 @@ Object.assign(BlockReorder.prototype, require('./function-bind'), require('./ren
   bound: ['onMouseDown', 'onDragStart', 'onDragEnd', 'onDrop'],
 
   className: 'st-block-ui-btn__reorder',
-  tagName: 'a',
+  tagName: 'button',
 
   attributes: function() {
     return {
       'html': 'reorder',
       'draggable': 'true',
-      'data-icon': 'move'
+      'data-icon': 'move',
+      'type': 'button'
     };
   },
 
