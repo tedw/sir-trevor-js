@@ -3,8 +3,9 @@
 var drop_options = {
   html: ['<div class="st-block__dropzone">',
     '<span class="st-icon"></span>',
-    '<p><%= i18n.t("general:drop", { block: "<span>" + _.result(block, "title").toLowerCase() + "</span>" }) %>',
-    '</p></div>'].join('\n'),
+    '<p class="st-block__imageText"><%= i18n.t("general:drop", { block: "<span>" + _.result(block, "title").toLowerCase() + "</span>" }) %></p>',
+    '<p class="st-block__videoText">YouTube, Vimeo, Instagram, or Vine</p>',
+    '</div>'].join('\n'),
     re_render_on_reorder: false
 };
 
