@@ -66,7 +66,6 @@ module.exports = Block.extend({
 
   matchVideoProvider: function(provider, index, url) {
     var match = provider.regex.exec(url);
-    console.log(match);
     if ( match == null || _.isUndefined( match[1] ) ) {
       return false;
     }
