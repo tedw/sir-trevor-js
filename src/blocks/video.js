@@ -15,6 +15,16 @@ module.exports = Block.extend({
     youtube: {
       regex: /^.*(?:(?:youtu\.be\/)|(?:youtube\.com)\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*)/,
       html: "<iframe src=\"<%= protocol %>//www.youtube.com/embed/<%= remote_id %>\" width=\"580\" height=\"320\" frameborder=\"0\" allowfullscreen></iframe>"
+    },
+    vine: {
+      regex: /(?:http[s]?:\/\/)?(?:www.)?vine.co\/v\/([^\W]*)/,
+      html: "<iframe class=\"vine-embed\" src=\"<%= protocol %>//vine.co/v/<%= remote_id %>/embed/simple\" width=\"<%= width %>\" height=\"<%= width %>\" frameborder=\"0\"></iframe><script async src=\"http://platform.vine.co/static/scripts/embed.js\" charset=\"utf-8\"></script>",
+      square: true
+    },
+    instagram: {
+      regex: /http[s]?:\/\/instagr\.?am(?:\.com)?\/p\/(\w*)\/?/,
+      html: "<iframe src='https://instagram.com/p/<%= remote_id %>/embed/' frameborder='0' scrolling='no' width=\"580\" height=\"580\"></iframe>",
+      square: true
     }
   },
 
