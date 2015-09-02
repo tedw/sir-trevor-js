@@ -101,7 +101,7 @@ Object.assign(SimpleBlock.prototype, require('./function-bind'), require('./even
 
   _initUI : function() {
     var ui_element = Dom.createElement("div", { 'class': 'st-block__ui' });
-    this.el.appendChild(ui_element);
+    this.inner.appendChild(ui_element);
     this.ui = ui_element;
     this._initUIComponents();
   },
