@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var _ = require('./lodash');
 var config = require('./config');
@@ -7,54 +7,56 @@ var utils = require('./utils');
 var Locales = {
   en: {
     general: {
-      'delete':           'Delete?',
-      'drop':             'Drag __block__ here',
-      'paste':            'Or paste URL here',
-      'upload':           '...or choose a file',
-      'close':            'close',
-      'position':         'Position',
-      'wait':             'Please wait...',
-      'link':             'Enter a link',
-      'yes':              'Yes',
-      'no':               'No'
+      'delete':   'Delete?',
+      'drop':     'Drag __block__ here',
+      'paste':    'Paste video URL here',
+      'upload':   '...or choose a file',
+      'close':    'close',
+      'position': 'Position',
+      'wait':     'Please wait...',
+      'link':     'Enter a link',
+      'yes':      'Yes',
+      'no':       'No'
     },
     errors: {
-      'title': "You have the following errors:",
-      'validation_fail': "__type__ block is invalid",
-      'block_empty': "__name__ must not be empty",
-      'type_missing': "You must have a block of type __type__",
-      'required_type_empty': "A required block type __type__ is empty",
-      'load_fail': "There was a problem loading the contents of the document"
+      'title': 'You have the following errors:',
+      'validation_fail': '__type__ block is invalid',
+      'block_empty': '__name__ must not be empty',
+      'type_missing': 'You must have a block of type __type__',
+      'required_type_empty': 'A required block type __type__ is empty',
+      'load_fail': 'There was a problem loading the contents of the document'
     },
     blocks: {
       text: {
-        'title': "Text"
+        'title': 'Text'
       },
       list: {
-        'title': "List"
+        'title': 'List'
       },
       quote: {
-        'title': "Quote",
-        'credit_field': "Credit"
+        'title': 'Quote',
+        'credit_field': 'Source (optional)'
       },
       image: {
-        'title': "Image",
-        'upload_error': "There was a problem with your upload"
+        'title': 'Image',
+        'upload_error': 'Sorry, there was a problem with your upload.',
+        'drop': 'Drag photo here',
       },
       video: {
-        'title': "Video"
+        'title': 'Video',
+        'drop': ''
       },
       tweet: {
-        'title': "Tweet",
-        'fetch_error': "There was a problem fetching your tweet"
+        'title': 'Tweet',
+        'fetch_error': 'There was a problem fetching your tweet'
       },
       embedly: {
-        'title': "Embedly",
-        'fetch_error': "There was a problem fetching your embed",
-        'key_missing': "An Embedly API key must be present"
+        'title': 'Embedly',
+        'fetch_error': 'There was a problem fetching your embed',
+        'key_missing': 'An Embedly API key must be present'
       },
       heading: {
-        'title': "Heading"
+        'title': 'Heading'
       }
     }
   }
@@ -62,7 +64,7 @@ var Locales = {
 
 if (window.i18n === undefined) {
   // Minimal i18n stub that only reads the English strings
-  utils.log("Using i18n stub");
+  utils.log('Using i18n stub');
   window.i18n = {
     t: function(key, options) {
       var parts = key.split(':'), str, obj, part, i;
@@ -79,7 +81,7 @@ if (window.i18n === undefined) {
 
       str = obj;
 
-      if (!_.isString(str)) { return ""; }
+      if (!_.isString(str)) { return ''; }
 
       if (str.indexOf('__') >= 0) {
         Object.keys(options).forEach(function(opt) {
@@ -91,7 +93,7 @@ if (window.i18n === undefined) {
     }
   };
 } else {
-  utils.log("Using i18next");
+  utils.log('Using i18next');
   // Only use i18next when the library has been loaded by the user, keeps
   // dependencies slim
   i18n.init({ resStore: Locales, fallbackLng: config.language,

@@ -57,8 +57,10 @@ module.exports = {
   },
 
   setAndLoadData: function(blockData) {
-    this.setData(blockData);
-    this.beforeLoadingData();
+    if ( !!blockData ) {
+      this.setData(blockData);
+      this.beforeLoadingData();
+    }
   },
 
   _serializeData: function() {},
