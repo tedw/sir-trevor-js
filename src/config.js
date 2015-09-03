@@ -34,19 +34,6 @@ module.exports = {
 
   defaults: {
     defaultType: false,
-    spinner: {
-      className: 'st-spinner',
-      lines: 9,
-      length: 8,
-      width: 3,
-      radius: 6,
-      color: '#000',
-      speed: 1.4,
-      trail: 57,
-      shadow: false,
-      left: '50%',
-      top: '50%'
-    },
     Block: {
       drop_options: drop_options,
       paste_options: paste_options,

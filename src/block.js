@@ -4,7 +4,6 @@ var _ = require('./lodash');
 
 var ScribeInterface = require('./scribe-interface');
 
-var config = require('./config');
 var utils = require('./utils');
 var Dom = require('./packages/dom');
 var Events = require('./packages/events');
@@ -15,8 +14,6 @@ var BlockReorder = require('./block-reorder');
 var BlockDeletion = require('./block-deletion');
 var BlockPositioner = require('./block-positioner');
 var EventBus = require('./event-bus');
-
-var Spinner = require('spin.js');
 
 const DELETE_TEMPLATE = require("./templates/delete");
 
@@ -132,20 +129,11 @@ Object.assign(Block.prototype, SimpleBlock.fn, require('./block-validations'), {
   },
 
   loading: function() {
-    if(!_.isUndefined(this.spinner)) { this.ready(); }
-
-    this.spinner = new Spinner(config.defaults.spinner);
-    this.spinner.spin(this.el);
-
     this.el.classList.add('st--is-loading');
   },
 
   ready: function() {
     this.el.classList.remove('st--is-loading');
-    if (!_.isUndefined(this.spinner)) {
-      this.spinner.stop();
-      delete this.spinner;
-    }
   },
 
    //Generic _serializeData implementation to serialize the block into a plain object.
