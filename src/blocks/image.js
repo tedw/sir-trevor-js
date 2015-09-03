@@ -35,15 +35,24 @@ module.exports = Block.extend({
     var file = transferData.files[0],
         urlAPI = (typeof URL !== "undefined") ? URL : (typeof webkitURL !== "undefined") ? webkitURL : null;
 
+    // Reset warning
+    this.resetMessages();
+
+    // Check file size
+    if ( file.size / 1024 / 1024 > 5 ) {
+      this.resetMessages();
+      this.addMessage('Sorry, only images smaller than 5MB are accepted.');
+    }
+
     // Handle one upload at a time
-    if (/image/.test(file.type)) {
+    else if (/image/.test(file.type)) {
       this.loading();
       // Show this image on here
       Dom.hide(this.inputs);
       this.editor.innerHTML = '';
       this.editor.appendChild(Dom.createElement('img', { src: urlAPI.createObjectURL(file) }));
       Dom.show(this.editor);
-      
+
       this.uploader(
         file,
         function(data) {
