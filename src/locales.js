@@ -35,7 +35,7 @@ var Locales = {
       },
       quote: {
         'title': 'Quote',
-        'credit_field': 'Source (optional)'
+        'credit_field': 'Attribution'
       },
       image: {
         'title': 'Image',

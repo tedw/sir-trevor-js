@@ -10,9 +10,10 @@ var Block = require('../block');
 var stToHTML = require('../to-html');
 
 var template = _.template([
+  '<p class="st-block-heading">Quotation</p>',
   '<blockquote class="st-required st-text-block" contenteditable="true"></blockquote>',
   '<label class="st-input-label"> <%= i18n.t("blocks:quote:credit_field") %></label>',
-  '<input maxlength="140" name="cite" placeholder="<%= i18n.t("blocks:quote:credit_field") %>"',
+  '<input maxlength="140" name="cite" placeholder="(optional)"',
   ' class="st-input-string st-required js-cite-input" type="text" />'
 ].join("\n"));
 
