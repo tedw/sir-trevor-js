@@ -201,7 +201,14 @@ Object.assign(Block.prototype, SimpleBlock.fn, require('./block-validations'), {
   _onBlur: function() {},
 
   onBlockRender: function() {
-    this.focus();
+    // Focus video URL field
+    if ( this.type === 'video' ) {
+      var firstInput = this.el.getElementsByTagName('input')[0];
+      firstInput.focus();
+    }
+    else {
+      this.focus();
+    }
   },
 
   onDrop: function(dataTransferObj) {},
