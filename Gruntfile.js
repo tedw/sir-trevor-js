@@ -81,6 +81,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['test', 'webpack:uncompressed', 'webpack:dist']);
   grunt.registerTask('test', ['clean:all', 'jshint', 'karma', 'test-integration']);
-  grunt.registerTask('test-integration', ['webpack:test', 'connect', 'jasmine_nodejs' ])
+  grunt.registerTask('test-integration', ['webpack:test', 'connect' ])
   grunt.registerTask('dev', ['webpack-dev-server:start']);
 };
