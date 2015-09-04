@@ -38,14 +38,20 @@ module.exports = Block.extend({
     // Reset warning
     this.resetMessages();
 
+    // Check file type
+    if ( !/image/.test( file.type ) ) {
+      this.resetMessages();
+      this.addMessage('Only image files are allowed.');
+    }
+
     // Check file size
-    if ( file.size / 1024 / 1024 > 5 ) {
+    else if ( file.size / 1024 / 1024 > 5 ) {
       this.resetMessages();
       this.addMessage('Sorry, only images smaller than 5MB are accepted.');
     }
 
     // Handle one upload at a time
-    else if (/image/.test(file.type)) {
+    else {
       this.loading();
       // Show this image on here
       Dom.hide(this.inputs);
