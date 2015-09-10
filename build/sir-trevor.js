@@ -3664,13 +3664,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	        title: "bold",
 	        cmd: "bold",
 	        keyCode: 66,
-	        text: "B"
+	        text: "bold"
 	      }, {
 	        name: "Italic",
 	        title: "italic",
 	        cmd: "italic",
 	        keyCode: 73,
-	        text: "i"
+	        text: "italic"
 	      }, {
 	        name: "Link",
 	        title: "link",
