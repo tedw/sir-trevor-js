@@ -74,7 +74,7 @@ module.exports = {
           title: "unlink",
           iconName: "link",
           cmd: "unlink",
-          text : "link",
+          text : "unlink",
         },
       ],
     },
