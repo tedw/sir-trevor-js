@@ -21,7 +21,7 @@ var Submittable = function(form) {
 Object.assign(Submittable.prototype, {
 
   initialize: function(){
-    this.submitBtns = this.form.querySelectorAll("input[type='submit']");
+    this.submitBtns = this.form.querySelectorAll("[type='submit']");
 
     var btnTitles = [];
 
