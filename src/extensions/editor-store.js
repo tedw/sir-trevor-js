@@ -57,8 +57,7 @@ Object.assign(EditorStore.prototype, {
 
       this.mediator.trigger('errors:render');
 
-      console.log('Sorry there has been a problem with parsing the JSON');
-      console.log(e);
+      console.warn('There was a problem parsing the JSON', e);
     }
 
     return result;

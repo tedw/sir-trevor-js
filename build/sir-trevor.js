@@ -4229,8 +4229,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      this.mediator.trigger('errors:render');
 
-	      console.log('Sorry there has been a problem with parsing the JSON');
-	      console.log(e);
+	      console.warn('There was a problem parsing the JSON', e);
 	    }
 
 	    return result;
@@ -4271,7 +4270,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	_Object$assign(Submittable.prototype, {
 
 	  initialize: function initialize() {
-	    this.submitBtns = this.form.querySelectorAll("input[type='submit']");
+	    this.submitBtns = this.form.querySelectorAll("[type='submit']");
 
 	    var btnTitles = [];
 
@@ -17546,6 +17545,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	  icon_name: 'image',
 
+	  validFileTypes: ['image/gif', 'image/jp2', // JPEG 2000
+	  'image/jpeg', 'image/jpg', 'image/pjpeg', // legacy progressive JPG format, used in old IE
+	  'image/vnd.ms-photo', // JPEG XR
+	  'image/jxr', // JPEG XR
+	  'image/png', 'image/x-png', // legacy PNG MIME-type
+	  'image/webp', // WebP
+	  '' // Android File API doesn't always provide valid file type
+	  ],
+
 	  loadData: function loadData(data) {
 	    // Create our image tag
 	    this.editor.innerHTML = '';
@@ -17574,9 +17582,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.resetMessages();
 
 	    // Check file type
-	    if (!/image/.test(file.type)) {
+	    if (this.validFileTypes.indexOf(file.type) === -1) {
 	      this.resetMessages();
-	      this.addMessage('Only image files are allowed.');
+	      this.addMessage('Sorry, that file type isn’t supported.');
 	    }
 
 	    // Check file size
