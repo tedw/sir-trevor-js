@@ -17588,7 +17588,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    // Check file size
-	    else if (file.size / 1024 / 1024 > 5) {
+	    else if (file.size / 1024 / 1024 > 12) {
 	        this.resetMessages();
 	        this.addMessage('Sorry, only images smaller than 5MB are accepted.');
 	      }
